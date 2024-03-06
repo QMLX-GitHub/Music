@@ -1,0 +1,65 @@
+#slideshow {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.image-container {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+
+}
+
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow-button.arrow-left {
+    left: 160px;
+    /*background-image: url('/img/滑动窗口/6.jpg'); !* 左箭头图标 *!*/
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.arrow-button.arrow-right {
+    right: 300px;
+    /*background-image: url('/img/滑动窗口/7.jpg'); !* 右箭头图标 *!*/
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFE0; /* 设置按钮背景颜色，这里使用红色作为示例 */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}

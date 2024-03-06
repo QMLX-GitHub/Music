@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的音乐</title>
+    <link rel="stylesheet" href="./css/mymusic.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font_nsq0jxg6iil/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="nav inner">
+                <div class="nav_t">
+                    <div class="logo">
+                        <a href="#"><img src="./img/logo.jpg" alt="" style="height: 200px;"/></a>
+                    </div>
+                    <div class="top_nav__item">
+                        <ul>
+                            <li><a href="index.html"  title ="音乐馆">音乐馆</a></li>
+                            <li><a href="mymusic.html" class="my_music" title="我的音乐">我的音乐</a></li>
+                            <li><input type="text" placeholder="  搜索音乐、MV、歌单、用户" /></li>
+                        
+                        </ul>
+                    </div>
+<!--                    <div class="header_buttons">-->
+<!--                        <a href="./login.html" class="sumbit">登录/注册</a>-->
+<!--                    </div>-->
+
+                
+                </div>
+                <div class="nav_b">
+                    <ul>
+                        <li>
+                            <a  href="index.html">首页</a>
+                        </li>
+<!--                        <li>-->
+<!--                            <a href="#">专辑</a>-->
+<!--                        </li>-->
+                        <li>
+                            <a href="./歌手.html">歌手</a>
+                        </li>
+                        <li>
+                            <a href="./排行榜.html">排行榜</a>
+                        </li>
+                        <li>
+                            <a href="歌单.html">分类歌单</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="content">
+            <div class="user"></div>
+            <div class="inner">
+                <div class="songSheet">
+                    <div class="songSheet_head">
+                        <span class="subtitle">收藏歌曲</span>
+                    </div>
+                    <table class="songs" width="100%">
+                        <thead>
+                        <tr style="background-color:darkgray;">
+                            <th>标题</th>
+                            <th>歌手</th>
+                            <th>专辑</th>
+                        </tr>
+                        </thead>
+                        <tbody id="songData">
+                        <!-- 数据将动态添加到这里 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="../js/in_mymusic.js"></script>
+</body>
+</html>

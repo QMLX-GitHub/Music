@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;  /*宽度和高度会包括内边距和边框*/
+    border: none;
+}
+
+div.search {
+    border: none;
+}
+
+form {
+    position: fixed;
+    width: 300px;
+}
+
+input,button {
+    border: none;   /*无边框样式；元素的总宽度和高度包括边框的宽度 */
+    outline: none;  /*无轮廓样式；轮廓是在元素周围绘制的一条线，在边框之外并且可能与其他内容重叠，以凸显元素，元素的总宽度和高度不受轮廓线宽度的影响。*/
+}
+
+.search input {
+    margin-left: 10px;
+    margin-top: 0;
+    width: 80%;
+    height: 42px;
+    padding-left: 13px;
+    border: 1px solid deepskyblue;
+    border-radius: 19px;   /*border-radius 属性用于向元素添加圆角边框：*/
+    background: transparent;  /*背景透明*/
+}
+
+.search button {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;  /*cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+    position: absolute;
+    background: deepskyblue;
+    border-radius: 0 19px 19px 0;
+    width: 60px;
+    right: 5%;
+}
+.search button:hover {
+    background-color: deepskyblue;  /*点击搜索按钮时的背景颜色*/
+}
+
+/* 在<button>元素后面插入内容，并设置所插入内容的样式： */
+.search button:before {
+    content: "搜索";  /*插入的内容*/
+    font-size: 13px;  /*插入内容的字体大小*/
+    color: #F9F0DA;  /*插入内容的字体颜色*/
+}

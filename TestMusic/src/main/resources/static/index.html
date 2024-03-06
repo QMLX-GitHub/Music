@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>球球音乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font_nsq0jxg6iil/iconfont.css">
+    <link rel="stylesheet" href="./css/滑动窗口.css" type="text/css">
+    <link rel="stylesheet" href="./css/播放.css">
+    <link rel="stylesheet" href="./css/搜索.css">
+    <link rel="stylesheet" href="./css/MV.css">
+</head>
+<body style="overflow: auto;overflow-x: hidden;">
+<div class="wrap">
+    <!-- 头部 -->
+    <div class="header">
+        <div class="nav inner">
+            <div class="nav_t">
+                <div class="logo">
+                    <a href="./index.html"><img src="./img/logo.jpg" alt="" style="height: 178px;"/></a>
+                </div>
+
+                <div class="top_nav__item">
+                    <ul>
+                        <li><a href="index.html" title="音乐馆">音乐馆</a></li>
+                        <li><a href="mymusic.html" title="我的音乐">我的音乐</a></li>
+                        <div class="search">
+                            <form action="/selectByKeyWord" id="searchForm" method="get" target="_blank">
+                                <input id="keywordInput" placeholder="请输入..." name="keyword" type="text">
+                                <button id="searchButton" type="submit"></button>
+                            </form>
+                        </div>
+                    </ul>
+                </div>
+                <div class="header_buttons">
+                    <a href="./login.html" class="sumbit">登录/注册</a>
+                </div>
+
+            </div>
+            <div class="nav_b">
+                <ul>
+                    <li>
+                        <a class="current" href="./index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./歌手.html">歌手</a>
+                    </li>
+                    <li>
+                        <a href="./排行榜.html">排行榜</a>
+                    </li>
+                    <li>
+                        <a href="歌单.html">分类歌单</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--</div>-->
+
+    <div id="slideshow">
+        <div class="slide">
+            <div class="image-container">
+                <img src="./img/滑动窗口/1.jpg" alt="Image 1" style="height: 275px;">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <img src="./img/滑动窗口/2.jpg" alt="Image 2" style="height: 275px;">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <img src="./img/滑动窗口/3.jpg" alt="Image 3" style="height: 275px;">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <img src="./img/滑动窗口/4.jpg" alt="Image 4" style="height: 275px;">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <img src="./img/滑动窗口/5.jpg" alt="Image 5" style="height: 275px;">
+            </div>
+        </div>
+
+        <div class="arrow-button arrow-left"><img src="./img/滑动窗口/6.jpg" style="width: 50px;border-radius: 50%"></div>
+        <div class="arrow-button arrow-right"><img src="./img/滑动窗口/7.jpg" style="width: 50px;border-radius: 50%"></div>
+    </div>
+    <!-- 歌单推荐 -->
+    <div class="content">
+        <div class="inner">
+            <div class="songSheet">
+                <div class="songSheet_head">
+                    <span class="subtitle">歌  单  推  荐</span>
+                </div>
+                <div class="songSheet_pics">
+                    <ul>
+                        <li>
+                            <a href="./recommend.html">
+                                <img src="./img/live/1.jpg" alt="" class="songSheet_pic"/>
+                            </a>
+                            <i class="mask"></i>
+                            <i class="cover_icon_play"></i>
+                        </li>
+                        <li>
+                            <a href="./recommend2.html">
+                                <img src="./img/live/2.jpg" alt="" class="songSheet_pic"/>
+                            </a>
+                            <i class="mask"></i>
+                            <i class="cover_icon_play"></i>
+                        </li>
+                        <li>
+                            <a href="./recommend3.html">
+                                <img src="./img/live/4.jpg" alt="" class="songSheet_pic"/>
+                            </a>
+                            <i class="mask"></i>
+                            <i class="cover_icon_play"></i>
+                        </li>
+                        <li>
+                            <a href="./recommend4.html">
+                                <img src="./img/live/5.jpg" alt="" class="songSheet_pic"/>
+                            </a>
+                            <i class="mask"></i>
+                            <i class="cover_icon_play"></i>
+                        </li>
+                        <li>
+                            <a href="./recommend5.html">
+                                <img src="./img/live/6.jpg" alt="" class="songSheet_pic"/>
+                            </a>
+                            <i class="mask"></i>
+                            <i class="cover_icon_play"></i>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="songSheet_names">
+                    <ul>
+                        <li>
+                            <a href="">Live:3秒入侵你耳机，时下热曲随时听</a>
+                            <span>播放量：1353万</span>
+                        </li>
+
+                        <li>
+                            <a href="">Live:90后怀旧|那些年我们曾唱过的歌</a>
+                            <span>播放量：441万</span>
+                        </li>
+                        <li>
+                            <a href="">Live:90回忆杀｜将往事和回忆留在歌里</a>
+                            <span>播放量：13.6万</span>
+                        </li>
+                        <li>
+                            <a href="">Live:抖音超热曲：你想听的歌这都有</a>
+                            <span>播放量：13.5万</span>
+                        </li>
+                        <li>
+                            <a href="">Live: 青春 | 陪伴90后成长的华语金曲</a>
+                            <span>播放量：135.1万</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="head">
+            精 选 MV
+        </div>
+        <div class="body">
+
+            <div class="video-container">
+                <video src="./img/MV/理化兄弟%20-%20Space%20Edge%20Love%20Song%20(Visual%20by%20Flint).mp4" poster="./img/MV/1.jpg" controls></video>
+                <p>理化兄弟 - Space Edge Love Song (Visual by Flint)</p>
+            </div>
+            <div class="video-container">
+                <video src="./img/MV/草东没有派对%20-%20山海%20Wayfarer.mp4" poster="./img/MV/2.jpg" controls></video>
+                <p>This is the first video.</p>
+            </div>
+            <div class="video-container">
+                <video src="./img/MV/G.E.M.邓紫棋%20-%20倒数.mp4" poster="./img/MV/3.jpg" controls></video>
+                <p>This is the first video.</p>
+            </div>
+        </div>
+
+
+        <script src="./js/index.js"></script>
+        <script src="./js/滑动窗口.js"></script>
+
+        <script src="./js/播放2.js"></script>
+        <script src="./js/播放.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#searchButton').click(function (event) {
+                    event.preventDefault(); // 阻止表单的默认提交行为
+
+                    var keyword = $('#keywordInput').val();
+
+                    // 在这里进行数据检查
+                    checkDataExists(keyword)
+                        .then(function (dataExists) {
+                            if (dataExists) {
+                                // 数据存在，打开新页面并传递数据
+                                var searchForm = $('#searchForm');
+                                searchForm.attr('action', 'search.html?keyword=' + encodeURIComponent(keyword));
+                                searchForm.submit();
+                            } else {
+                                // 数据不存在，弹窗提示
+                                alert('搜索不到相关数据');
+                            }
+                        })
+                        .catch(function (error) {
+                            // 请求失败，处理错误
+                            console.error(error);
+                            alert('请求失败，请稍后再试');
+                        });
+                });
+
+                // 模拟数据检查的函数
+                function checkDataExists(keyword) {
+                    // 假设这是一个异步请求，返回一个Promise对象
+                    return new Promise(function (resolve, reject) {
+                        // 发起异步请求，检查数据是否存在
+                        $.ajax({
+                            url: 'data.json',
+                            method: 'GET',
+                            data: {keyword: keyword},
+                            success: function (response) {
+                                // 根据实际情况，解析响应数据并判断数据是否存在
+                                if (response.exists) {
+                                    resolve(true); // 数据存在
+                                } else {
+                                    resolve(false); // 数据不存在
+                                }
+                            },
+                            error: function () {
+                                reject(new Error('请求失败')); // 请求失败
+                            }
+                        });
+                    });
+                }
+            });
+        </script>
+</body>
+
+</html>

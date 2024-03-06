@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font_nsq0jxg6iil/iconfont.css">
+    <link rel="stylesheet" href="./css/滑动窗口.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <title>歌手列表 - 球球音乐</title>
+  <style>
+    .container{
+      align-items: center;
+      border-radius: 100px;
+      border: 0px solid black;
+      background-color: rgb(228, 241, 246);
+      padding: 20px;
+      display: revert;
+      flex-display: row;
+      width: 99%;
+      margin-left: -7%;
+    }
+    .container img {
+    margin-left: -80px;
+    border-radius: 83%;
+    }
+    .container h1, .container p {
+    margin-left: 625px;
+    margin-top: -158px; /* 设置文字元素的横向间距 */
+    }
+
+    /*作品 单曲 专辑*/
+    .Box {
+      display: flex; /* 设置容器为弹性盒子布局 */
+      justify-content: flex-start;; /* 在主轴上平均分布元素 */
+    }
+
+    .box {
+      border: 0px solid black; /* 设置框的边框样式 */
+      background-color: white; /* 设置框的背景颜色 */
+      padding: 20px; /* 设置框的内边距 */
+      margin-left: 250px;
+
+    }
+
+
+    /*列表*/
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    鼠标悬停样式
+      tr:hover {
+        background-color: #8f2f41;
+        font-weight: bold;
+    }
+
+    斑马线样式
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    调整单元格内的内容对齐方式
+      td {
+        vertical-align: middle;
+    }
+
+    调整表格宽度
+      table {
+        width: 90%;
+        max-width: 100%;
+        margin-right:100px;
+    }
+    table#myTable a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    table#myTable a:hover {
+        color: #0056b3;
+        font-size: 1.2em;
+    }
+
+  </style>
+
+</head>
+
+<body style="overflow: auto;overflow-x: hidden;">
+  <div class="wrap">
+    <!-- 头部 -->
+    <div class="header">
+        <div class="nav inner">
+            <div class="nav_t">
+                <div class="logo">
+                    <a href="/index.html"><img src="./img/logo.jpg" alt="" style="height: 200px;"/></a>
+                </div>
+                <div class="top_nav__item">
+                    <ul>
+                        <li><a href="./index.html"  title ="音乐馆">音乐馆</a></li>
+                        <li><a href="./mymusic.html" title="我的音乐">我的音乐</a></li>
+                        <li><input type="text" placeholder="  搜索音乐、MV、歌单、用户" /></li>
+                    
+                    </ul>
+                </div>
+<!--                <div class="header_buttons">-->
+<!--                    <a href="./login.html" class="sumbit">登录/注册</a>-->
+<!--                </div>-->
+
+            
+            </div>
+            <div class="nav_b">
+                <ul>
+                    <li>
+                        <a  href="./index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">专辑</a>
+                    </li>
+                    <li>
+                        <a class="current" href="./歌手.html">歌手</a>
+                    </li>
+                    <li>
+                        <a href="./排行榜.html">排行榜</a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a href="#">分类歌单</a>-->
+<!--                    </li>-->
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container">
+            <img src="https://y.qq.com/music/photo_new/T001R300x300M000002J4UUk29y8BY_6.jpg?max_age=2592000" alt="歌手照片">
+            <p>薛之谦-Joker<br><br><br>
+                别名：谦谦、二谦<br><br><br>
+                代表作品：《认真的雪》、《演员》、《丑八怪》、《绅士》</p>
+        </div>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>歌曲</th>
+                    <th>歌手</th>
+                    <th>时长</th>
+                </tr>
+            </thead>
+            <tbody id="songData">
+<!--            <tr><td>song.id</td><td><a href="听歌.html?data=../music/4.mgg,song.songname,song.name,song.image">song.songname </a></td><td> song.name</td><td>song.time</td></tr>-->
+            </tbody>
+        </table>
+
+        <script >
+            $(document).ready(function() {
+                // 发送AJAX请求到后端API
+                $.ajax({
+                    url: '/laoxue', // 替换为您的后端API的URL
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        // 处理响应数据并渲染排行榜
+                        var songsData = $('#songData');
+                        for (var i = 0; i < data.data.length; i++) {
+                            var song = data.data[i];
+                            song.id=i+1;
+                            var songRow = '<tr><td>'+ song.id+'</td><td><a href="听歌.html?data='
+                                +song.url+','+song.songname+','+song.name+','+song.image+'">'
+                                +song.songname + '</a></td><td>' + song.name + '</td><td>' + song.time+ '</td></tr>';                            songsData.append(songRow);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error); // 处理错误情况
+                        alert('获取排行榜数据时发生错误，请稍后再试！'); // 创建错误提示弹窗
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

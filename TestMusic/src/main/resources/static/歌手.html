@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>歌手列表 - 球球音乐</title>
+    <link rel="stylesheet" href="./css/歌手.css" type="text/css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球球音乐</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/搜索.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font_nsq0jxg6iil/iconfont.css">
+    <link rel="stylesheet" href="./css/滑动窗口.css" type="text/css">
+</head>
+
+<body style="overflow: auto;overflow-x: hidden;">
+    <!--             头部                   -->
+    <div class="wrap">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="nav inner">
+                <div class="nav_t">
+                    <div class="logo">
+                        <a href="./index.html"><img src="./img/logo.jpg" alt="" style="height: 178px;" /></a>
+                    </div>
+                    <div class="top_nav__item">
+                        <ul>
+                            <li><a href="./index.html" title="音乐馆">音乐馆</a></li>
+                            <li><a href="mymusic.html" title="我的音乐">我的音乐</a></li>
+                            <div class="search">
+                                <form action="/selectByKeyWord" id="searchForm" method="get" target="_blank">
+                                    <input id="keywordInput" placeholder="请输入..." name="keyword" type="text">
+                                    <button id="searchButton" type="submit"></button>
+                                </form>
+                            </div>
+
+                        </ul>
+                    </div>
+<!--                    <div class="header_buttons">-->
+<!--                        <a href="./login.html" class="sumbit">登录/注册</a>-->
+<!--                    </div>-->
+
+
+                </div>
+                <div class="nav_b">
+                    <ul>
+                        <li>
+                            <a  href="./index.html">首页</a>
+                        </li>
+<!--                        <li>-->
+<!--                            <a href="#">专辑</a>-->
+<!--                        </li>-->
+                        <li>
+                            <a class="current" href="./歌手.html">歌手</a>
+                        </li>
+                        <li>
+                            <a href="./排行榜.html">排行榜</a>
+                        </li>
+                        <li>
+                            <a href="歌单.html">分类歌单</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--</div>-->
+
+        <script src="./js/index.js"></script>
+        <script src="./js/滑动窗口.js"></script>
+        <div class="cl"></div>
+        <div>
+            <img src="./img/singer.jpg" style="width: 84%;height: 400px;margin-left: -133px;margin-top: 70px;" >
+        </div> 
+        <div>
+        <p style="margin-left:515px;"><span style="font-size: 150%">热门歌手</span></p>
+            <div class="container">
+<!--        <div class="res">-->
+<!--            <div class="img">-->
+<!--                <a href="jielun.html"><img src="./img/jielun.jpg" width="200" height="260"></a>-->
+<!--                <div class="desc"><a href="jielun.html">周杰伦</a></div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="res">-->
+<!--            <div class="img">-->
+<!--                <a href="ziqi.html"><img src="./img/ziqi.png" width="200" height="260"></a>-->
+<!--                <div class="desc"><a href="ziqi.html">G.E.M. 邓紫棋</a></div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="res">-->
+<!--            <div class="img">-->
+<!--                <a href="Taylor.html"><img src="./img/Taylor.jpg" width="200" height="260"></a>-->
+<!--                <div class="desc"><a href="Taylor.html">Taylor Swift</a></div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="res">-->
+<!--            <div class="img">-->
+<!--                <a href="laoxue.html"><img src="./img/laoxue.jpg" width="200" height="260"></a>-->
+<!--                <div class="desc"><a href="laoxue.html">薛之谦</a></div>-->
+<!--            </div>-->
+        </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Send AJAX request to the backend API
+                $.ajax({
+                    url: '/selectSingerByNameToSingerPage', // Replace 'backend-api-url' with the actual URL of your backend API
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        var singers = response.data;
+
+                        // Get the container element
+                        var container = $('.container');
+
+                        // Loop through the singers array and generate the HTML code dynamically
+                        for (var i = 0; i < singers.length; i++) {
+                            var singer = singers[i];
+
+                            // Create the HTML elements based on the template
+                            var resDiv = $('<div>').addClass('res');
+                            var imgDiv = $('<div>').addClass('img');
+                            var imgLink = $('<a>').attr('href', 'search.html?keyword='+ singer.name+'');
+                            var img = $('<img>').attr('src', singer.image).attr('width', '200').attr('height', '260');
+                            imgLink.append(img); // Place the image inside the hyperlink
+                            var descDiv = $('<div>').addClass('desc');
+                            var descLink = $('<a>').attr('href', 'search.html?keyword='+ singer.name+'').text(singer.name);
+
+                            // Append the elements to the container
+                            descDiv.append(descLink);
+                            imgDiv.append(imgLink, descDiv); // Place the image hyperlink and description inside the image div
+                            resDiv.append(imgDiv);
+                            container.append(resDiv);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error); // Handle error cases
+                        alert('Error occurred while fetching singer data. Please try again later.'); // Show error message to the user
+                    }
+                });
+            });
+        </script>
+
+        </div>
+
+</body>
+
+</html>
